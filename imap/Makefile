@@ -1,6 +1,6 @@
 include $(GOROOT)/src/Make.inc
 
-# TARG=code.google.com/p/rsc/imap
+# TARG=github.com/Gastrograph/rsc/imap
 
 TARG=rsc.googlecode.com/hg/imap
 GOFILES=\

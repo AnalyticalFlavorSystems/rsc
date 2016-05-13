@@ -9,7 +9,7 @@ import (
 	"log"
 	"os"
 
-	"code.google.com/p/rsc/fuse"
+	"github.com/Gastrograph/rsc/fuse"
 )
 
 func main() {

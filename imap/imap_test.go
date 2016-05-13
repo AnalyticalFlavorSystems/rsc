@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"code.google.com/p/rsc/google"
+	"github.com/Gastrograph/rsc/google"
 )
 
 // NOTE: web address is https://mail.google.com/mail/b/rsc@swtch.com/?shva=1#inbox/132e5fd3a6a3c17b

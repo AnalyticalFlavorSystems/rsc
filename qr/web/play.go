@@ -44,11 +44,11 @@ import (
 	"strings"
 	"time"
 
-	"code.google.com/p/rsc/appfs/fs"
-	"code.google.com/p/rsc/gf256"
-	"code.google.com/p/rsc/qr"
-	"code.google.com/p/rsc/qr/coding"
-	"code.google.com/p/rsc/qr/web/resize"
+	"github.com/Gastrograph/rsc/appfs/fs"
+	"github.com/Gastrograph/rsc/gf256"
+	"github.com/Gastrograph/rsc/qr"
+	"github.com/Gastrograph/rsc/qr/coding"
+	"github.com/Gastrograph/rsc/qr/web/resize"
 )
 
 func runTemplate(c *fs.Context, w http.ResponseWriter, name string, data interface{}) {
@@ -185,7 +185,7 @@ func Draw(w http.ResponseWriter, req *http.Request) {
 		if err := ctxt.Write("qrsave/"+tag, data); err != nil {
 			panic(err)
 		}
-		http.Redirect(w, req, "/qr/show/" + tag, http.StatusTemporaryRedirect)
+		http.Redirect(w, req, "/qr/show/"+tag, http.StatusTemporaryRedirect)
 		return
 	}
 
@@ -365,8 +365,8 @@ func flag(w http.ResponseWriter, req *http.Request, img string, ctxt *fs.Context
 	}
 	data, _, _ := ctxt.Read("qr/flag/" + img)
 	data = append(data, '!')
-	ctxt.Write("qr/flag/" + img, data)
-	
+	ctxt.Write("qr/flag/"+img, data)
+
 	fmt.Fprintf(w, "Thank you.  The image has been reported.\n")
 }
 
@@ -424,7 +424,7 @@ type Image struct {
 	Dx       int
 	Dy       int
 	URL      string
-	Tag string
+	Tag      string
 	Version  int
 	Mask     int
 	Scale    int

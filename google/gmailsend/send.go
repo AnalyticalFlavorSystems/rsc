@@ -12,7 +12,7 @@ import (
 	"regexp"
 	"strings"
 
-	"code.google.com/p/rsc/google"
+	"github.com/Gastrograph/rsc/google"
 )
 
 func enc(s string) string {
